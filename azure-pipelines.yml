@@ -13,7 +13,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build image fron github main branch
+  displayName: Build image from github main branch
   jobs:
   - job: Build
     displayName: Build 
@@ -21,8 +21,9 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      displayName: Building a new container
+      displayName: Building a new container and pushing to docker hub
       inputs:
+        repository: 'idanvak/sela-demos:tagname'
         command: buildAndPush
         dockerfile: '**/Dockerfile'
         tags: |
