@@ -21,6 +21,10 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
+      inputs:
+        containerRegistry: 'dockerHub'
+        command: 'login'
+    - task: Docker@2
       displayName: Building a new container and pushing to docker hub
       inputs:
         repository: 'idanvak/sela-demos'
