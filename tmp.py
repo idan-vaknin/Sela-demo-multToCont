@@ -1,4 +1,4 @@
-
+#comment for class - running azure pipline
 #print multiplication table for number temp
 
 for i in range(0, 11):
